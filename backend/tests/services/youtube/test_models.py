@@ -25,7 +25,7 @@ def test_constructor(input):
 )
 def test_duration_in_seconds(input, expected):
     movie = YoutubeMovie(None, None, None, input)
-    duration = movie.duration_in_seconds()
+    duration = movie.duration_in_seconds
     assert duration == expected
 
 
@@ -57,4 +57,3 @@ def test_duration_in_seconds(input, expected):
 def test_factory(snippet, details, expected):
     movie = factory(snippet, details)
     assert movie == expected
-
