@@ -1,0 +1,2 @@
+requests==2.23.0
+metomi-isodatetime==1!2.0.1
