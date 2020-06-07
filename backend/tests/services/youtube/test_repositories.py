@@ -23,5 +23,5 @@ def test__page_generator(input, expected):
 )
 def test_search(max_results):
     repo = Youtube()
-    output = list(repo.search("ahgora", max_results))
+    output = list(repo.search("biscoito", max_results))
     assert len(output) == max_results
