@@ -1,5 +1,5 @@
 from dataclasses import dataclass
-from metomi.isodatetime.parsers import DurationParser
+from isodate import isoduration
 
 
 @dataclass
@@ -17,9 +17,9 @@ class YoutubeMovie:
         Convert ISO8601 duration from youtube to seconds
         """
 
-        parsed = DurationParser().parse(self.duration)
         if self._duration_in_seconds is None:
-            self._duration_in_seconds = parsed.get_seconds()
+            parsed = isoduration.parse_duration(self.duration)
+            self._duration_in_seconds = parsed.total_seconds()
         return self._duration_in_seconds
 
 
