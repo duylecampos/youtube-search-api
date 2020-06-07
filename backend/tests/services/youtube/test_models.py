@@ -34,7 +34,7 @@ def test_duration_in_seconds(input, expected):
     [
         (
             {
-                "id": "TJVbhpN7l_4",
+                "id": {"videoId": "TJVbhpN7l_4"},
                 "snippet": {
                     "title": "Lorem ipsum dolor sit amet",
                     "description": "Mauris lobortis accumsan est, et lacinia velit feugiat ultrices. Mauris et urna non felis aliquet consectetur. ",

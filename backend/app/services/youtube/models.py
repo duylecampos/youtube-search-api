@@ -25,10 +25,10 @@ class YoutubeMovie:
 
 def factory(snippet: str, details: str) -> YoutubeMovie:
     detail_movie = next(
-        filter(lambda item: item["id"] == snippet["id"], details["items"])
+        filter(lambda item: item["id"] == snippet["id"]["videoId"], details["items"])
     )
     return YoutubeMovie(
-        snippet["id"],
+        snippet["id"]["videoId"],
         snippet["snippet"]["title"],
         snippet["snippet"]["description"],
         detail_movie["contentDetails"]["duration"],
