@@ -39,6 +39,7 @@ class Youtube:
             "part": "snippet",
             "q": term,
             "maxResults": max_results_in_page,
+            "type": "video",
             "pageToken": page_token if page_token else "",
         }
         return await self._async_fetch(
