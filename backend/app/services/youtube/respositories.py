@@ -1,5 +1,4 @@
 import math
-import requests
 import aiohttp
 import asyncio
 from typing import Iterator
