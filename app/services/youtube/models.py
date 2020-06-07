@@ -8,6 +8,7 @@ class YoutubeMovie:
     title: str
     description: str
     duration: str
+    thumbnail: str
 
     _duration_in_seconds = None
 
@@ -32,4 +33,5 @@ def factory(snippet: str, details: str) -> YoutubeMovie:
         snippet["snippet"]["title"],
         snippet["snippet"]["description"],
         detail_movie["contentDetails"]["duration"],
+        snippet["snippet"]["thumbnails"]["medium"]["url"],
     )
