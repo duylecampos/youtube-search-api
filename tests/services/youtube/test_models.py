@@ -11,6 +11,7 @@ from app.services.youtube.models import YoutubeMovie, factory
             "title": "Lorem ipsum dolor sit amet",
             "description": "Mauris lobortis accumsan est, et lacinia velit feugiat ultrices. Mauris et urna non felis aliquet consectetur. ",
             "duration": "PT6M39S",
+            "thumbnail": "https://i.ytimg.com/vi/WRKYfRPTcy0/mqdefault.jpg"
         }
     ],
 )
@@ -24,7 +25,7 @@ def test_constructor(input):
     [("PT6M39S", 399), ("PT39S", 39), ("P1DT5M49S", 86749), ("PT99S", 99)],
 )
 def test_duration_in_seconds(input, expected):
-    movie = YoutubeMovie(None, None, None, input)
+    movie = YoutubeMovie(None, None, None, input, None)
     duration = movie.duration_in_seconds
     assert duration == expected
 
@@ -38,6 +39,11 @@ def test_duration_in_seconds(input, expected):
                 "snippet": {
                     "title": "Lorem ipsum dolor sit amet",
                     "description": "Mauris lobortis accumsan est, et lacinia velit feugiat ultrices. Mauris et urna non felis aliquet consectetur. ",
+                    "thumbnails": {
+                        "medium": {
+                            "url": "https://i.ytimg.com/vi/WRKYfRPTcy0/mqdefault.jpg"
+                        }
+                    },
                 },
             },
             {
@@ -50,6 +56,7 @@ def test_duration_in_seconds(input, expected):
                 "Lorem ipsum dolor sit amet",
                 "Mauris lobortis accumsan est, et lacinia velit feugiat ultrices. Mauris et urna non felis aliquet consectetur. ",
                 "PT6M39S",
+                "https://i.ytimg.com/vi/WRKYfRPTcy0/mqdefault.jpg",
             ),
         )
     ],
